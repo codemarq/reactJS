@@ -26,6 +26,9 @@ coverage
 # Bower dependency directory (https://bower.io/)
 bower_components
 
+# Output of Webpack
+bundle.js
+
 # node-waf configuration
 .lock-wscript
 
