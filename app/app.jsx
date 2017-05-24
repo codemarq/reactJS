@@ -8,4 +8,4 @@ const Button = (props) => {
 	);
 };
 
-ReactDOM.render(<Button />, 'index.html')
+ReactDOM.render(<Button />, 'index.html');

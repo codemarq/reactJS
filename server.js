@@ -4,15 +4,15 @@ const express = require('express'),
 	methodOverride = require('method-override'),
 	bodyParser = require('body-parser'),
 	logger = require('morgan'),
-	request = require('request'),
+	// request = require('request'),
 	Promise = require('bluebird'),
 	mongoose = require('mongoose'),
-	devUri = "mongodb://localhost/reactJS",
+	devUri = 'mongodb://localhost/reactJS',
 	db = mongoose.connection;
 mongoose.Promise = Promise;
 
 
-app.use(logger("dev"));
+app.use(logger('dev'));
 app.use(bodyParser.urlencoded({	extended: false }));
 
 app.use(express.static(process.cwd() || __dirname + '/public'));
@@ -22,15 +22,15 @@ if (process.env.MONGODNB_URI) {
 	mongoose.connect(process.env.MONGODNB_URI);
 } else {
 	mongoose.connect(devUri);
-};
+}
 
 
-db.on("error", function(error) {
-	console.log("Mongoose Error: ", error);
+db.on('error', function(error) {
+	console.log('Mongoose Error: ', error);
 });
 
-db.once("open", function(){
-	console.log("Mongoose connection successful.");
+db.once('open', function(){
+	console.log('Mongoose connection successful.');
 });
 
 // ROUTES
