@@ -28,6 +28,7 @@ bower_components
 
 # Output of Webpack
 bundle.js
+./public/bundle.js
 
 # node-waf configuration
 .lock-wscript
